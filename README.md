@@ -2,49 +2,49 @@
 
 Microsoft.AspNetCore.Identity localization.Support zh-CN,en-US,de-DE,es-ES,fr-FR,pl-PL,pt-PT,ru-RU,tr-TR,uk-UA language
 
-Microsoft.AspNetCore.IdentityÊÇÖ§³Ö¶àÖÖÓïÑÔµÄÓïÑÔ°ü¡£
+Microsoft.AspNetCore.Identityæ˜¯æ”¯æŒå¤šç§è¯­è¨€çš„è¯­è¨€åŒ…ã€‚
 
 ## Install
 `Install-Package AspNetCore.Identity.Localization.Core`
 
 ## Use
-1¡¢`using AspNetCore.Identity.Localization.Core;`
+1ã€`using AspNetCore.Identity.Localization.Core;`
 
-2¡¢update `ConfigureServices` method in  `Startup.cs` file.
+2ã€update `ConfigureServices` method in  `Startup.cs` file.
 ```diff
-            services.AddDbContext<AppDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Identity")));
+services.AddDbContext<AppDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Identity")));
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
-               - .AddIdentityErrorDescriber();
+services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
+- .AddIdentityErrorDescriber();
 
-          - services.AddIdentityLocalization();
+- services.AddIdentityLocalization();
 
-            services.AddControllers();
+services.AddControllers();
 
 ```
-3¡¢update `ConfigureServices` method in  `Startup.cs` file.
+3ã€update `ConfigureServices` method in  `Startup.cs` file.
 ```diff
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+if (env.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
 
-            app.UseRouting();
+app.UseRouting();
 
-          - // support language list.The web site default language is cultures[0]
-          - var cultures = Configuration.GetSection("Cultures").Value.Split(",");
-          - app.UseIdentityLocalization(cultures);
+- // support language list.The web site default language is cultures[0]
+- var cultures = Configuration.GetSection("Cultures").Value.Split(",");
+- app.UseIdentityLocalization(cultures);
 
-            app.UseAuthorization();
+app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+app.UseEndpoints(endpoints =>
+{
+   endpoints.MapControllers();
+});
 
 ```
 
-4¡¢update  `appsettings.json` file.
+4ã€update  `appsettings.json` file.
 
 `  "Cultures": "zh-CN,en-US,de-DE,es-ES,fr-FR,pl-PL,pt-PT,ru-RU,tr-TR,uk-UA"`
 ## test
