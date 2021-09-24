@@ -15,9 +15,9 @@ Microsoft.AspNetCore.Identity是支持多种语言的语言包。
 services.AddDbContext<AppDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Identity")));
 
 services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>()
-- .AddIdentityErrorDescriber();
++ .AddIdentityErrorDescriber();
 
-- services.AddIdentityLocalization();
++ services.AddIdentityLocalization();
 
 services.AddControllers();
 
@@ -31,9 +31,9 @@ if (env.IsDevelopment())
 
 app.UseRouting();
 
-- // support language list.The web site default language is cultures[0]
-- var cultures = Configuration.GetSection("Cultures").Value.Split(",");
-- app.UseIdentityLocalization(cultures);
++ // support language list.The web site default language is cultures[0]
++ var cultures = Configuration.GetSection("Cultures").Value.Split(",");
++ app.UseIdentityLocalization(cultures);
 
 app.UseAuthorization();
 
