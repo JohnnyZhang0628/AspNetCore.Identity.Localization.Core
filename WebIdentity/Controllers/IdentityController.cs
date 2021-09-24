@@ -18,10 +18,10 @@ namespace WebIdentity.Controllers
     [ApiController]
     public class IdentityController : ControllerBase
     {
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly IStringLocalizer<SharedResource> _localizer;
 
-        public IdentityController(UserManager<User> userManager, IStringLocalizer<SharedResource> localizer)
+        public IdentityController(UserManager<IdentityUser> userManager, IStringLocalizer<SharedResource> localizer)
         {
             _userManager = userManager;
             _localizer = localizer;
@@ -40,7 +40,7 @@ namespace WebIdentity.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] AddUserDto userDto)
         {
-            var result = await _userManager.CreateAsync(new User
+            var result = await _userManager.CreateAsync(new IdentityUser
             {
                 UserName = userDto.UserName,
                 Email = userDto.Email,
