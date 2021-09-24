@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>JohnnyZhang</Authors>
+    <Description>Microsoft.AspNetCore.Identity localize.Support zh-CN,en-US,de-DE,es-ES,fr-FR,pl-PL,pt-PT,ru-RU,tr-TR,uk-UA language. Microsoft.AspNetCore.Identity 多语言包，支持中文、英语、西班牙、葡萄牙等语言</Description>
+    <RepositoryUrl>https://github.com/JohnnyZhang0628/AspNetCore.Identity.Localization.Core</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/JohnnyZhang0628/AspNetCore.Identity.Localization.Core</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="5.0.10" />
+  </ItemGroup>
+
+</Project>
