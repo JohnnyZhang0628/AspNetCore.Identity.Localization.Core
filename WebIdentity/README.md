@@ -63,3 +63,5 @@ Microsoft.AspNetCore.Identity是支持多种语言的语言包。
 
 3.open [http://localhost:54176/api/identity?culture=other-other](http://localhost:54176/api/identity?culture=other-other) in browser.
 
+
+
